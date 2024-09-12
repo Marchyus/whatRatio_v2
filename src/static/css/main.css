@@ -1,0 +1,106 @@
+:root {
+    /* Color Theme Swatches in HSLA */
+    --color-darkest: hsla(189, 68%, 8%, 1);
+    --color-darker: hsla(191, 25%, 36%, 1);
+    --color-middle: hsla(185, 28%, 65%, 1);
+    --color-accent: hsla(39, 33%, 26%, 1);
+    --color-light: hsla(0, 0%, 95%, 1);
+    }
+/* POSITIONING */
+/* get rid of default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* positioning */
+body {
+    display: grid;
+    min-height: 100vh;
+    grid-template-areas: "header"
+                         "container"
+                         "footer";
+    grid-template-rows: auto 15fr auto;
+    
+    
+}
+
+header {
+    width: 100%;
+    grid-area: header;
+    padding-top: 1%;
+    /* display: flex;
+    justify-content: center;
+    align-items: last baseline; */
+}
+
+.header-links {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 3%;
+}
+
+.header-links> button:nth-child(3) {
+     margin-left: 10%;
+
+}
+
+
+#container {
+    grid-area: container;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+}
+
+
+
+
+/* STYLING */
+body {
+    background: var(--color-light);
+}
+
+header { 
+    background-color: var(--color-middle);
+}
+
+button {
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-wrap: nowrap;
+}
+
+
+
+.header-button {
+    border: none;
+    border-radius: 25% 25% 0 0;
+    /* border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem; */
+    background-color: var(--color-darker);
+    color: var(--color-light);
+}
+
+.header-button:hover {
+    box-sizing: border-box;
+    background-color: var(--color-light);
+    color: var(--color-darkest);
+    border: 0.1rem solid var(--color-darker);
+    padding: 0.9rem;
+    cursor: pointer;
+}
+
+
+footer {
+    background: var(--color-middle);
+    padding: 1% 10% 1% 10%;
+}
