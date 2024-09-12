@@ -1,36 +1,88 @@
 import { navBar } from "./drawDesignElements.js";
 import "../css/main.css";
-// import { Select } from "./designElements.js";
+import { Heading, Select } from "./designElements.js";
 
 
 
 
 
 
-// Add NAV BAR
+// NAV bar
 const header = document.querySelector('header');
 header.appendChild(navBar);
+// #Container
+const container = document.querySelector('#container');
+
+// function to clear container
+const cleanContainer = function () {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+}
 
 
 // pseudo database
+//TODO: move outside from main.js
 const buttonActions = {
     button_model: {
-        heading: "Gear ratio comparison"
+        heading: "Compare ratios by brand",
+        cssClassList: "button_model",
+        init: function () {
+            // draw brand select
+            const brandDropdown = new Select("(optional) Brand", "brand", "brand");
+            container.appendChild(brandDropdown.getSelect());
+            brandDropdown.addOption("shimano", "Shimano");
+            brandDropdown.addOption("sram", "Sram");
+            brandDropdown.addOption("campagnolo", "Campagnolo");
+
+            // draw series select
+            const seriesDropdown = new Select("(optional) series", "series", "series");
+            container.appendChild(seriesDropdown.getSelect());
+            seriesDropdown.addOption("grx", "GRX");
+            seriesDropdown.addOption("eagle", "Eagle");
+            seriesDropdown.addOption("ultegra", "Ultegra");
+
+            // draw ratio select
+            const gearRatio = new Select("(optional) series", "ratio", "ratio");
+            container.appendChild(gearRatio.getSelect());
+            gearRatio.addOption("1x11", "1x11");
+            gearRatio.addOption("1x12", "1x12");
+            gearRatio.addOption("2x11", "2x11");
+
+            // apply css
+            container.className =  '';
+            container.classList.add(this.cssClassList);
+        }
     },
-    button_brand: {
-        heading: "Custom Gear comparison"
+    button_custom: {
+        heading: "Custom Gear comparison",
+        init: function () {
+
+        }
     },
     button_cassettes: {
-        heading: "Cassettes in database"
+        heading: "Cassettes in database",
+        init: function () {
+            
+        }
     },
     button_cranksets: {
-        heading: "Custom Gear comparison"
+        heading: "Cranksets in database",
+        init: function () {
+            
+        }
     },
     button_faq: {
-        heading: "Custom Gear comparison"
+        heading: "FAQ",
+        init: function () {
+            
+        }
     },
     button_about: {
-        heading: "Custom Gear comparison"
+        heading: "About",
+        init: function () {
+            
+        }
     }
 };
 
@@ -38,54 +90,27 @@ const buttonActions = {
 const allHeaderButtons = document.querySelectorAll('.header-button');
 allHeaderButtons.forEach((button) => {
     button.addEventListener('click', () => {
-        console.log(button.id);
-        console.log(buttonActions[button.id]['heading'])
+        cleanContainer();
+        const action = buttonActions[button.id];
+        
+         if (action) {
+            container.appendChild(new Heading(action.heading, "main-heading").buildHeading());
+            action.init();
+         }
     })
 });
 
-// move to functions
-// add dropdowns for brand
 
-// Locate container
-const container = document.querySelector('#container');
+// Click button "by brand" on first page load
 
-class Select {
-    constructor (labelText, name, id) {
-        this.labelText = labelText;
-        this.name = name;
-        this.id = id;
-        // Build up label element
-        this.label = document.createElement('label');
-        this.label.innerText = this.labelText;
-        this.label.setAttribute('for', this.id);
-
-        // Build up select
-        this.select = document.createElement('select');
-        this.select.setAttribute('id', this.id);
-        this.select.setAttribute('name', this.name);
+document.addEventListener('DOMContentLoaded', () => {
+    const firstButton = document.querySelector('#button_model');
+    if (firstButton) {
+        firstButton.click();
     }
-
-    // return DIV with label+select inside
-    getSelect () {
-        const div = document.createElement('div');
-        div.appendChild(this.label);
-        div.appendChild(this.select);
-
-        return div;
-    }
-
-    addOption (optionValue, optionText) {
-        // construct option
-        const option = document.createElement('option');
-        option.setAttribute('value', optionValue);
-        option.innerText = optionText;
-
-        // add option to the select
-        this.select.appendChild(option);
-    }
-}
+})
 
 
-const brandDropdown = new Select("(optional) Brand", "brand", "brand").getSelect();
-container.appendChild(brandDropdown);
-brandDropdown.addOption("Shimano", "shimano")
+
+
+

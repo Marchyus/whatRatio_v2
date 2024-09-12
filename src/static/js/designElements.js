@@ -38,19 +38,56 @@ class Dates {
 
 
 class Heading {
-    constructor(headingText, classname = '') {
-        this.headingText = headingText
+    constructor(headingText, className = '') {
+        this.headingText = headingText;
+        this.className = className;
     }
 
     buildHeading () {
         const div = document.createElement('div');
         div.innerText = this.headingText;
+        if (this.className) {div.classList.add(this.className)}
         return div;
     }
 }
 
 
+class Select {
+    constructor (labelText, name, id) {
+        this.labelText = labelText;
+        this.name = name;
+        this.id = id;
+        // Build up label element
+        this.label = document.createElement('label');
+        this.label.innerText = this.labelText;
+        this.label.setAttribute('for', this.id);
+
+        // Build up select
+        this.select = document.createElement('select');
+        this.select.setAttribute('id', this.id);
+        this.select.setAttribute('name', this.name);
+    }
+
+    // return DIV with label+select inside
+    getSelect () {
+        const div = document.createElement('div');
+        div.appendChild(this.label);
+        div.appendChild(this.select);
+
+        return div;
+    }
+
+    addOption (optionValue, optionText) {
+        // construct option
+        const option = document.createElement('option');
+        option.setAttribute('value', optionValue);
+        option.innerText = optionText;
+
+        // add option to the select
+        this.select.appendChild(option);
+    }
+}
 
 
 
-export {Button, Dates, Heading};
+export {Button, Dates, Heading, Select};

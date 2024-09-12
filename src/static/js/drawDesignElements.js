@@ -8,7 +8,7 @@ navBar.classList.add('header-links');
 
 // generate buttons for NAV:
 const buttonByBrand = new Button("By model", "button_model", "header-button").buildButton();
-const buttonCustom = new Button("Custom", "button_brand", "header-button").buildButton();
+const buttonCustom = new Button("Custom", "button_custom", "header-button").buildButton();
 const buttonCassettes = new Button("Cassettes", "button_cassettes", "header-button").buildButton();
 const buttonCranksets = new Button("Cranksets", "button_cranksets", "header-button").buildButton();
 const buttonFAQ = new Button("FAQ", "button_faq", "header-button").buildButton();
@@ -24,14 +24,7 @@ navBar.appendChild(buttonAbout);
 
 
 
-// CONTAINER
-// main heading
-const container = document.querySelector('#container');
 
-// get heading 
-const heading = new Heading("Gear ratio comparison",  "main-heading").buildHeading();
-
-container.appendChild(heading);
 
 
 

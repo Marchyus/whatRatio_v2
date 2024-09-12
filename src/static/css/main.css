@@ -50,6 +50,7 @@ header {
 
 
 #container {
+    padding: 0 10% 0 5%;
     grid-area: container;
 }
 
@@ -90,6 +91,15 @@ button {
     color: var(--color-light);
 }
 
+.header-button-active {
+    border: none;
+    border-radius: 25% 25% 0 0;
+    /* border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem; */
+    background-color: var(--color-light);
+    color: var(--color-darker);
+}
+
 .header-button:hover {
     box-sizing: border-box;
     background-color: var(--color-light);
@@ -103,4 +113,17 @@ button {
 footer {
     background: var(--color-middle);
     padding: 1% 10% 1% 10%;
+}
+
+/* many different CSS for every #container design */
+
+.button_model {
+    display: grid;
+}
+
+
+/* Other styling */
+.main-heading {
+    font-size: 2rem;
+    padding: 1%;
 }
