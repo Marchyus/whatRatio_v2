@@ -127,7 +127,7 @@ footer {
                          "dropdowncassette dropdowncassette dropdowncrankset dropdowncrankset selected "
                          "teethscassette   teethscass1ette  teethscrankset   teethscrankset   selected "
                          "gt               grt              zz                 buttonaddtograph asdad";
-    grid-template-rows: 3rem 2rem 2rem 2rem 2rem;
+    grid-template-rows: 3rem 3rem 3rem 2rem 2rem;
     justify-items: center;
     align-items: center;
 }
@@ -144,8 +144,20 @@ footer {
     grid-area: ratio;
 }
 
-.reset-model-filter {
+.model-filter-reset {
     grid-area: buttonreset;
+}
+
+.all-cassettes {
+    grid-area: dropdowncassette;
+}
+
+.all-cranksets {
+    grid-area: dropdowncrankset;
+}
+
+.model-filter-addtograph {
+    grid-area: buttonaddtograph;
 }
 
 

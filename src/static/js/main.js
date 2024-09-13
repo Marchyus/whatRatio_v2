@@ -61,10 +61,30 @@ const buttonActions = {
             gearRatio.div.classList.add("model-filter", "dropdown" , "ratio");
 
             // button "reset filters"
-            const resetModelFilter = new Button("reset filter", "reset-model-filter", "reset-model-filter");
-            const button = resetModelFilter.buildButton()
-            container.appendChild(button);
+            const resetModelFilter = new Button("reset filter", "model-filter-reset", "model-filter-reset");
+            const buttonReset = resetModelFilter.buildButton();
+            container.appendChild(buttonReset);
 
+            // dropdown with cassette list
+            const allCassettes = new Select("cassettes", "all-cassettes", "all-cassettes");
+            container.appendChild(allCassettes.getSelect());
+            allCassettes.addOption("ca50", "CS-G105 11-38T");
+            allCassettes.addOption("ca51", "CS-H083 12-46T");
+            allCassettes.addOption("ca52", "CS-H083 11-42T");
+            allCassettes.div.classList.add("model-filter", "dropdown" ,"all-cassettes");
+
+            // dropdown with crankset list
+            const allCranksets = new Select("cranksets", "all-cranksets", "all-cranksets");
+            container.appendChild(allCranksets.getSelect());
+            allCranksets.addOption("cr15", "FC-RX820-1 42T");
+            allCranksets.addOption("cr16", "FC-RX820-2 31,48T");
+            allCranksets.addOption("cr17", "FC-RS200 34,46T");
+            allCranksets.div.classList.add("model-filter", "dropdown" ,"all-cranksets");
+
+            // button "Add to graph"
+            const addToGraph = new Button("Add to Graph", "model-filter-addtograph", "model-filter-addtograph");
+            const buttonAddToGraph = addToGraph.buildButton();
+            container.appendChild(buttonAddToGraph);
             
         }
     },
