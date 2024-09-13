@@ -7,15 +7,15 @@ const navBar = document.createElement('nav');
 navBar.classList.add('header-links');
 
 // generate buttons for NAV:
-const buttonByBrand = new Button("By model", "button_model", "header-button").buildButton();
-const buttonCustom = new Button("Custom", "button_custom", "header-button").buildButton();
-const buttonCassettes = new Button("Cassettes", "button_cassettes", "header-button").buildButton();
-const buttonCranksets = new Button("Cranksets", "button_cranksets", "header-button").buildButton();
-const buttonFAQ = new Button("FAQ", "button_faq", "header-button").buildButton();
-const buttonAbout = new Button("About", "button_about", "header-button").buildButton();
+const buttonByBrand = new Button("By model", "header_button_model", "header-button");
+const buttonCustom = new Button("Custom", "header_button_custom", "header-button").buildButton();
+const buttonCassettes = new Button("Cassettes", "header_button_cassettes", "header-button").buildButton();
+const buttonCranksets = new Button("Cranksets", "header_button_cranksets", "header-button").buildButton();
+const buttonFAQ = new Button("FAQ", "header_button_faq", "header-button").buildButton();
+const buttonAbout = new Button("About", "header_button_about", "header-button").buildButton();
 
 // add buttons into NAV:
-navBar.appendChild(buttonByBrand);
+navBar.appendChild(buttonByBrand.buildButton());
 navBar.appendChild(buttonCustom);
 navBar.appendChild(buttonCassettes);
 navBar.appendChild(buttonCranksets);

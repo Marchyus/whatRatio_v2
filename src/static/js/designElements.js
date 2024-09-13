@@ -16,6 +16,18 @@ class Button {
         return this.button;
     }
 
+    addClass (className) {
+        this.button.classList.add(className);
+    }
+
+    removeClass (className) {
+        this.button.classList.remove(className);
+    }
+
+    removeClassAll () {
+        this.button.className = '';
+    }
+
     
 }
 
@@ -61,6 +73,7 @@ class Select {
         this.label = document.createElement('label');
         this.label.innerText = this.labelText;
         this.label.setAttribute('for', this.id);
+        this.div = document.createElement('div');
 
         // Build up select
         this.select = document.createElement('select');
@@ -70,11 +83,11 @@ class Select {
 
     // return DIV with label+select inside
     getSelect () {
-        const div = document.createElement('div');
-        div.appendChild(this.label);
-        div.appendChild(this.select);
+        
+        this.div.appendChild(this.label);
+        this.div.appendChild(this.select);
 
-        return div;
+        return this.div;
     }
 
     addOption (optionValue, optionText) {
