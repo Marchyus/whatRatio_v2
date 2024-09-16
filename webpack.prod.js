@@ -16,10 +16,10 @@ module.exports = {
         clean: true,
     },
 
-    devtool: "eval-source-map",
-    devServer: {
-        watchFiles: ["./src/**/*"],
-    },
+    // devtool: "eval-source-map",
+    // devServer: {
+    //     watchFiles: ["./src/**/*"],
+    // },
 
     plugins: [
         new HtmlWebpackPlugin({
