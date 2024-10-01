@@ -6,12 +6,43 @@
     --color-accent: hsla(39, 33%, 26%, 1);
     --color-light: hsla(0, 0%, 95%, 1);
     }
+
+/* Fonts */
+.atkinson-hyperlegible-regular {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .atkinson-hyperlegible-bold {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .atkinson-hyperlegible-regular-italic {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .atkinson-hyperlegible-bold-italic {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+
 /* POSITIONING */
 /* get rid of default styles */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+:root {
+    font-family: "Atkinson Hyperlegible", sans-serif;
 }
 
 /* positioning */
@@ -75,7 +106,8 @@ header {
 }
 
 button {
-    padding: 1rem;
+    box-sizing: border-box;
+    padding: 1vw;
     font-size: 1.2rem;
     text-wrap: nowrap;
 }
@@ -83,7 +115,7 @@ button {
 
 
 .header-button {
-    border: none;
+    border: 1px solid var(--color-darker);
     border-radius: 25% 25% 0 0;
     /* border-bottom-left-radius: 0.75rem;
     border-bottom-right-radius: 0.75rem; */
@@ -92,7 +124,7 @@ button {
 }
 
 .header-button-active {
-    border: none;
+    border: 1px solid var(--color-light);
     border-radius: 25% 25% 0 0;
     /* border-bottom-left-radius: 0.75rem;
     border-bottom-right-radius: 0.75rem; */
@@ -101,11 +133,9 @@ button {
 }
 
 .header-button:hover {
-    box-sizing: border-box;
     background-color: var(--color-light);
     color: var(--color-darkest);
-    border: 0.1rem solid var(--color-darker);
-    padding: 0.9rem;
+    border: 1px solid var(--color-darker);
     cursor: pointer;
 }
 
@@ -160,6 +190,70 @@ footer {
     grid-area: buttonaddtograph;
 }
 
+
+/* Custom gear comparition */
+#dialog-add-gearset {
+    border: none;
+    box-sizing: border-box;
+    position: fixed;
+    /* height: 20vh;
+    width: 45vw; */
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(124, 123, 123, 0.2);
+    align-content: center;
+
+}
+
+#dialog-add-gearset-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.dialog-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 1%;
+    padding: 1%;
+}
+
+.dialog-heading-text {
+    color: var(--color-darkest);
+}
+
+.dialog-heading-text-alert {
+    color: var(--color-accent);
+}
+
+.dialog-buttons {
+    display: flex;
+    gap: 1%;
+    padding: 1%;
+}
+
+.dialog-buttons > button {
+    flex: 1;
+}
+
+
+.add-custom-gearset-btn {
+    border: 1px solid var(--color-darker);
+    border-radius: 1rem;
+    padding-left: 3%;
+    padding-right: 3%;
+    color: var(--color-darkest);
+    background: var(--color-middle);
+}
+
+.add-custom-gearset-btn:hover {
+    border: 1px solid var(--color-light);
+    background: var(--color-darker);
+    color: var(--color-light)
+}
 
 /* shared between all #containers */
 .main-heading {
