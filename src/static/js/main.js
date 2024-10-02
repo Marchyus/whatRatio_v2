@@ -1,5 +1,8 @@
 import { navBar } from "./drawDesignElements.js";
 import "../css/main.css";
+import "../css/header.css";
+import "../css/footer.css";
+
 import { Button, Heading, Select } from "./designElements.js";
 
 

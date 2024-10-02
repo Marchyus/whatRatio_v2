@@ -4,7 +4,7 @@ import { Button, Dates, Heading } from "./designElements.js";
 // NAV
 // build NAV bar
 const navBar = document.createElement('nav');
-navBar.classList.add('header-links');
+navBar.classList.add('header-buttons');
 
 // generate buttons for NAV:
 const buttonByBrand = new Button("By model", "header_button_model", "header-button");
