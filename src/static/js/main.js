@@ -3,6 +3,7 @@ import "../css/main.css";
 import "../css/header.css";
 import "../css/footer.css";
 import "../css/tabCustom.css";
+import "../css/tabModel.css";
 
 import { Button, Heading, Select } from "./designElements.js";
 
@@ -137,6 +138,7 @@ const buttonActions = {
                     const isValidNumber = (ring) => !isNaN(ring) && ring != '';
 
                     if (!value.every(isValidNumber)) {
+                        console.log("Checking: ", value);
                         alert("Enter only numbers separated by dash or comma!");
                         return false;
                     }
@@ -151,8 +153,6 @@ const buttonActions = {
                     let newKey = undefined;
                     (Object.keys(customGearDB).length > 0) ? newKey = Math.max(...Object.keys(customGearDB).map(Number)) + 1 : newKey = 1;
                     customGearDB[newKey] = {front: frontChainrings, rear: rearChainrings};
-                    // console.log(newKey);
-                    // console.log(customGearDB);
                 }
 
                 const makeCustomGearList = function (customGearDB) {
@@ -176,27 +176,44 @@ const buttonActions = {
                     customGearHeaderRear.innerText = 'Rear chainring(s)';
 
                     // add header together
+                    // custom gears container -> main container
                     const mainContainer = document.querySelector('#container');
                     mainContainer.appendChild(customGearContainer);
+                    // header -> custom gears container
                     customGearContainer.appendChild(customGearHeader);
+                    // all 3 header divs -> header
                     customGearHeader.append(customGearHeaderNo);
                     customGearHeader.append(customGearHeaderFront);
                     customGearHeader.append(customGearHeaderRear);
 
                     // add in custom gears
                     Object.keys(customGearDB).forEach((set) => {
-                        // single div to hold custom container
+                        // single div to hold single gear set
                         const customGear = document.createElement('div');
-                        // custom gear details
+                        // gear #
                         const customGearNo = document.createElement('div');
                         customGearNo.innerText = set;
+                        // gears front
                         const customGearFront = document.createElement('div');
-                        customGearFront.innerText = customGearDB[set].front;
-                        console.log("Whole set: ", customGearDB[set]);
-                        console.log("Front: ", customGearDB[set].front.join(','));
-                        console.log("Rear: ", customGearDB[set].rear.join(','));
+                        customGearFront.innerText = customGearDB[set].front.join(',');
+                        // gears rear
+                        const customGearRear = document.createElement('div');
+                        customGearRear.innerText = customGearDB[set].rear.join(',');
 
+                        // add all together
+                        customGear.appendChild(customGearNo);
+                        customGear.appendChild(customGearFront);
+                        customGear.appendChild(customGearRear);
+
+                        // add custom gear into virtual table
+                        customGearContainer.appendChild(customGear);
+
+                        
+                        
                     })
+
+                    // add all to container
+                    
                 }
 
                 makeCustomGearList(customGearDB);
