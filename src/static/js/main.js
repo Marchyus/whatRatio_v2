@@ -2,8 +2,9 @@ import { navBar } from "./drawDesignElements.js";
 import "../css/main.css";
 import "../css/header.css";
 import "../css/footer.css";
-import "../css/tabCustom.css";
+import "../css/dialog.css";
 import "../css/tabModel.css";
+import "../css/tabCustom.css";
 
 import { Button, Heading, Select } from "./designElements.js";
 
@@ -166,33 +167,37 @@ const buttonActions = {
                     const customGearContainer = document.createElement('div');
                     customGearContainer.setAttribute('id', 'custom-gear-list');
                     
-                    // header for virtual table of custom gears
-                    const customGearHeader = document.createElement('div');
-                    const customGearHeaderNo = document.createElement('div');
-                    customGearHeaderNo.innerText = '#';
-                    const customGearHeaderFront = document.createElement('div');
-                    customGearHeaderFront.innerText = 'Front chainring(s)';
-                    const customGearHeaderRear = document.createElement('div');
-                    customGearHeaderRear.innerText = 'Rear chainring(s)';
+                    // // header for virtual table of custom gears
+                    // const customGearHeader = document.createElement('div');
+                    // const customGearHeaderEmpty = document.createElement('div');
+                    // const customGearHeaderNo = document.createElement('div');
+                    // customGearHeaderNo.innerText = '#';
+                    // const customGearHeaderFront = document.createElement('div');
+                    // customGearHeaderFront.innerText = 'Front chainring(s)';
+                    // const customGearHeaderRear = document.createElement('div');
+                    // customGearHeaderRear.innerText = 'Rear chainring(s)';
 
-                    // add header together
+                    // // add header together
+                    // // header -> custom gears container
+                    // customGearContainer.appendChild(customGearHeader);
+                    // // all 4 header divs -> header
+                    // customGearHeader.append(customGearHeaderEmpty);
+                    // customGearHeader.append(customGearHeaderNo);
+                    // customGearHeader.append(customGearHeaderFront);
+                    // customGearHeader.append(customGearHeaderRear);
+
                     // custom gears container -> main container
                     const mainContainer = document.querySelector('#container');
                     mainContainer.appendChild(customGearContainer);
-                    // header -> custom gears container
-                    customGearContainer.appendChild(customGearHeader);
-                    // all 3 header divs -> header
-                    customGearHeader.append(customGearHeaderNo);
-                    customGearHeader.append(customGearHeaderFront);
-                    customGearHeader.append(customGearHeaderRear);
 
                     // add in custom gears
                     Object.keys(customGearDB).forEach((set) => {
                         // single div to hold single gear set
                         const customGear = document.createElement('div');
+                        customGear.setAttribute("id", `custom-gear-${set}`)
                         // gear #
                         const customGearNo = document.createElement('div');
-                        customGearNo.innerText = set;
+                        customGearNo.innerText = `#${set}:`;
                         // gears front
                         const customGearFront = document.createElement('div');
                         customGearFront.innerText = customGearDB[set].front.join(',');
@@ -200,7 +205,18 @@ const buttonActions = {
                         const customGearRear = document.createElement('div');
                         customGearRear.innerText = customGearDB[set].rear.join(',');
 
-                        // add all together
+                        // button to delete individual row
+                        const deleteButton = document.createElement('button');
+                        deleteButton.classList = 'delete-button';
+                        deleteButton.preventDefault;
+                        deleteButton.textContent = 'x';
+                        deleteButton.addEventListener('click', () => {
+                            delete customGearDB[set];
+                            customGear.remove();
+                        })
+
+                        // values all together
+                        customGear.appendChild(deleteButton);
                         customGear.appendChild(customGearNo);
                         customGear.appendChild(customGearFront);
                         customGear.appendChild(customGearRear);

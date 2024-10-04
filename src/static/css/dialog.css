@@ -1,0 +1,46 @@
+#dialog-add-gearset {
+    border: none;
+    box-sizing: border-box;
+    position: fixed;
+    /* height: 20vh;
+    width: 45vw; */
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(124, 123, 123, 0.2);
+    align-content: center;
+
+}
+
+#dialog-add-gearset-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.dialog-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 1%;
+    padding: 1%;
+}
+
+.dialog-heading-text {
+    color: var(--color-darkest);
+}
+
+.dialog-heading-text-alert {
+    color: var(--color-accent);
+}
+
+.dialog-buttons {
+    display: flex;
+    gap: 1%;
+    padding: 1%;
+}
+
+.dialog-buttons > button {
+    flex: 1;
+}

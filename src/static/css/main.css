@@ -55,23 +55,16 @@ body {
     grid-template-rows: auto 15fr auto;
 }
 
-
-
-
-#container {
-    padding: 0 10% 0 5%;
-    grid-area: container;
-}
-
-
-
-
-
-
-/* GENERAL STYLING */
 body {
     background: var(--color-light);
 }
+
+
+#container {
+    padding: 1% 10% 0 5%;
+    grid-area: container;
+}
+
 
 
 
@@ -82,19 +75,6 @@ button {
     text-wrap: nowrap;
 }
 
-
-
-
-
-
-
-
-/* many different CSS for every #container design */
-/* Compare by MODEL */
-
-
-
-/* Custom gear comparition */
 
 
 /* shared between all #containers */
