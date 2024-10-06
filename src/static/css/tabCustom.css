@@ -43,9 +43,10 @@
     padding: 1%;
     display: grid;
     grid-template-columns: 3vw 5vw 20vw 30vw;
-    gap: 1%;
+    gap: 3%;
     overflow: scroll;
-    border: 1px solid black;
+    border: 1px solid var(--color-darker);
+    border-radius: 1rem;
     align-items: center;
 }
 
@@ -58,4 +59,8 @@ button.delete-button {
     cursor: pointer;
     align-self: center;
     justify-self: center;
+}
+
+.front-gear {
+    justify-self: flex-end;
 }

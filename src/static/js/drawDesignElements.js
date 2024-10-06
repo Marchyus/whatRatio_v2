@@ -30,7 +30,7 @@ navBar.appendChild(buttonCustom.buildButton());
 // navBar.appendChild(buttonCranksets.buildButton());
 // navBar.appendChild(buttonFAQ.buildButton());
 // navBar.appendChild(buttonAbout.buildButton());
-navBar.appendChild(dynamicHeader);
+
 
 // Icon to open Nav bar on small screens
 const burgerA = document.createElement('a');
@@ -43,7 +43,7 @@ burgerA.appendChild(burgerI);
 navBar.appendChild(burgerA);
 
 
-
+navBar.appendChild(dynamicHeader);
 
 
 // FOOTER

@@ -43,6 +43,10 @@ const buttonActions = {
             container.className =  '';
             container.classList.add(this.cssClassList);
 
+            // close down burger menu:
+            const hanburgerMenu = document.querySelector('#dropdown-menu');
+            hanburgerMenu.classList.remove('active');
+
             // draw brand select
             const brandDropdown = new Select("brand", "brand", "brand");
             container.appendChild(brandDropdown.getSelect());
@@ -104,8 +108,82 @@ const buttonActions = {
             container.className =  '';
             container.classList.add(this.cssClassList);
 
+            // close down burger menu:
+            const hanburgerMenu = document.querySelector('#dropdown-menu');
+            hanburgerMenu.classList.remove('active');
+
             // semi-global local database with custom gears
             let customGearDB = {}
+
+
+            const makeCustomGearList = function (customGearDB) {
+                // get current custom gear list
+                const currentList = document.querySelector('#custom-gear-list');
+                // if list exists - destroy it
+                if(currentList) {
+                    currentList.remove();
+                }
+                // container to hold all custom gears
+                const customGearContainer = document.createElement('div');
+                customGearContainer.setAttribute('id', 'custom-gear-list');
+                
+                // custom gears container -> main container
+                const mainContainer = document.querySelector('#container');
+                mainContainer.appendChild(customGearContainer);
+
+                // add in custom gears
+                Object.keys(customGearDB).forEach((set) => {
+                    // single div to hold single gear set
+                    const customGear = document.createElement('div');
+                    customGear.setAttribute("id", `custom-gear-${set}`)
+                    // gear #
+                    const customGearNo = document.createElement('div');
+                    customGearNo.innerText = `#${set}:`;
+                    // gears front
+                    const customGearFront = document.createElement('div');
+                    customGearFront.classList.add('front-gear')
+                    customGearFront.innerText = customGearDB[set].front.join('-');
+                    customGearFront.title = "front chainring"
+                    // gears rear
+                    const customGearRear = document.createElement('div');
+                    customGearRear.classList.add('rear-gear')
+                    customGearRear.innerText = customGearDB[set].rear.join('-');
+                    customGearRear.title = "rear chainring"
+
+                    // button to delete individual row
+                    const deleteButton = document.createElement('button');
+                    deleteButton.classList = 'delete-button';
+                    deleteButton.preventDefault;
+                    deleteButton.textContent = 'x';
+                    deleteButton.title = "remove"
+                    deleteButton.addEventListener('click', () => {
+                        delete customGearDB[set];
+                        customGear.remove();
+                        // store values in localStorage
+                        const gearRatiosString = JSON.stringify(customGearDB);
+                        localStorage.setItem('gearRatios', gearRatiosString)
+                    })
+
+                    // values all together
+                    customGear.appendChild(deleteButton);
+                    customGear.appendChild(customGearNo);
+                    customGear.appendChild(customGearFront);
+                    customGear.appendChild(customGearRear);
+
+                    // add custom gear into virtual table
+                    customGearContainer.appendChild(customGear);
+                })
+            }
+
+
+            // get data from localStorage
+            const storedGearRatios = localStorage.getItem('gearRatios');
+            if (storedGearRatios) {
+                customGearDB = JSON.parse(storedGearRatios);
+                makeCustomGearList(customGearDB);
+            }
+
+
 
 
             // button "add set"
@@ -118,23 +196,7 @@ const buttonActions = {
             buttonAddCustom.addEventListener('click', () => {
                 addCustomGearsetDialog.showModal();
             })
-
-            // // input field validations
-            // let frontChainrings = document.querySelector('#gears-front');
-            // let rearChainrings = document.querySelector('#gears-back');
-            
-            // frontChainrings.addEventListener('input', (event) => {
-
-            //     const validPattern = /^(\d+([,\-]\s?\d+)*)$/;
-
-            //     if (validPattern.test(frontChainrings.value)) {
-            //         frontChainrings.setCustomValidity("super");
-            //     } else {
-            //         frontChainrings.setCustomValidity("ne super");
-            //     }
-            //     frontChainrings.reportValidity();
-            // });
-            
+         
 
             const buttonAdd = document.querySelector('#add-custom');
             buttonAdd.addEventListener('click', (event) => {
@@ -169,34 +231,7 @@ const buttonActions = {
                     return value;
                 }
 
-                // function cleanRings(chainring) {
-                //     let value = chainring.value;
 
-                //     if (value.includes('-')) {
-                //         value = value.replace('-', ',');
-                //     }
-
-                //     value = value.split(',');
-
-                //     value = value.map(ring => ring.trim())
-
-                //     const isValidNumber = (ring) => !isNaN(ring) && ring != '';
-
-                //     if (!value.every(isValidNumber)) {
-                //         console.log("Checking: ", value);
-                //         alert("Enter only numbers separated by dash or comma!");
-                //         return false;
-                //     }
-
-                //     return value;
-                // }
-
-
-
-                // frontChainrings = cleanRings(frontChainrings);
-                // rearChainrings = cleanRings(rearChainrings);
-
-                // validate 
 
                 if (validateGearsetInput(frontChainrings) && validateGearsetInput(rearChainrings)) {
                     let newKey = undefined;
@@ -204,83 +239,13 @@ const buttonActions = {
                     customGearDB[newKey] = {front: inputToArray(frontChainrings), rear: inputToArray(rearChainrings)};
                 }
 
-                const makeCustomGearList = function (customGearDB) {
-                    // get current custom gear list
-                    const currentList = document.querySelector('#custom-gear-list');
-                    // if list exists - destroy it
-                    if(currentList) {
-                        currentList.remove();
-                    }
-                    // container to hold all custom gears
-                    const customGearContainer = document.createElement('div');
-                    customGearContainer.setAttribute('id', 'custom-gear-list');
-                    
-                    // // header for virtual table of custom gears
-                    // const customGearHeader = document.createElement('div');
-                    // const customGearHeaderEmpty = document.createElement('div');
-                    // const customGearHeaderNo = document.createElement('div');
-                    // customGearHeaderNo.innerText = '#';
-                    // const customGearHeaderFront = document.createElement('div');
-                    // customGearHeaderFront.innerText = 'Front chainring(s)';
-                    // const customGearHeaderRear = document.createElement('div');
-                    // customGearHeaderRear.innerText = 'Rear chainring(s)';
-
-                    // // add header together
-                    // // header -> custom gears container
-                    // customGearContainer.appendChild(customGearHeader);
-                    // // all 4 header divs -> header
-                    // customGearHeader.append(customGearHeaderEmpty);
-                    // customGearHeader.append(customGearHeaderNo);
-                    // customGearHeader.append(customGearHeaderFront);
-                    // customGearHeader.append(customGearHeaderRear);
-
-                    // custom gears container -> main container
-                    const mainContainer = document.querySelector('#container');
-                    mainContainer.appendChild(customGearContainer);
-
-                    // add in custom gears
-                    Object.keys(customGearDB).forEach((set) => {
-                        // single div to hold single gear set
-                        const customGear = document.createElement('div');
-                        customGear.setAttribute("id", `custom-gear-${set}`)
-                        // gear #
-                        const customGearNo = document.createElement('div');
-                        customGearNo.innerText = `#${set}:`;
-                        // gears front
-                        const customGearFront = document.createElement('div');
-                        customGearFront.innerText = customGearDB[set].front.join(',');
-                        // gears rear
-                        const customGearRear = document.createElement('div');
-                        customGearRear.innerText = customGearDB[set].rear.join(',');
-
-                        // button to delete individual row
-                        const deleteButton = document.createElement('button');
-                        deleteButton.classList = 'delete-button';
-                        deleteButton.preventDefault;
-                        deleteButton.textContent = 'x';
-                        deleteButton.addEventListener('click', () => {
-                            delete customGearDB[set];
-                            customGear.remove();
-                        })
-
-                        // values all together
-                        customGear.appendChild(deleteButton);
-                        customGear.appendChild(customGearNo);
-                        customGear.appendChild(customGearFront);
-                        customGear.appendChild(customGearRear);
-
-                        // add custom gear into virtual table
-                        customGearContainer.appendChild(customGear);
-
-                        
-                        
-                    })
-
-                    // add all to container
-                    
-                }
-
                 makeCustomGearList(customGearDB);
+                console.log(customGearDB);
+
+                // store values in localStorage
+                const gearRatiosString = JSON.stringify(customGearDB);
+                localStorage.setItem('gearRatios', gearRatiosString)
+
                 
             })
             
