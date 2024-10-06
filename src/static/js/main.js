@@ -104,8 +104,9 @@ const buttonActions = {
             container.className =  '';
             container.classList.add(this.cssClassList);
 
-            // semi-global local database for custom gears
+            // semi-global local database with custom gears
             let customGearDB = {}
+
 
             // button "add set"
             const buttonAddCustom = document.createElement('button');
@@ -118,6 +119,23 @@ const buttonActions = {
                 addCustomGearsetDialog.showModal();
             })
 
+            // // input field validations
+            // let frontChainrings = document.querySelector('#gears-front');
+            // let rearChainrings = document.querySelector('#gears-back');
+            
+            // frontChainrings.addEventListener('input', (event) => {
+
+            //     const validPattern = /^(\d+([,\-]\s?\d+)*)$/;
+
+            //     if (validPattern.test(frontChainrings.value)) {
+            //         frontChainrings.setCustomValidity("super");
+            //     } else {
+            //         frontChainrings.setCustomValidity("ne super");
+            //     }
+            //     frontChainrings.reportValidity();
+            // });
+            
+
             const buttonAdd = document.querySelector('#add-custom');
             buttonAdd.addEventListener('click', (event) => {
                 event.preventDefault();
@@ -125,35 +143,65 @@ const buttonActions = {
                 let frontChainrings = document.querySelector('#gears-front');
                 let rearChainrings = document.querySelector('#gears-back');
 
-                function cleanRings(chainring) {
-                    let value = chainring.value;
+                function validateGearsetInput(input) {
+                    const validPattern = /^(\d+([,\-]\s?\d+)*)$/;
 
-                    if (value.includes('-')) {
-                        value = value.replace('-', ',');
-                    }
+                    if (validPattern.test(input.value)) {
+                        return true;
+                    } else {
+                        input.setCustomValidity("only numbers separated by comma or dash (, -)");
+                        input.reportValidity();
+                    }   
+                }
 
+                function inputToArray (input) {
+                    // extract value from input
+                    let value = input.value;
+                    // convert dash to comma
+                    value = value.replace('-', ',');
+                    // split into array
                     value = value.split(',');
-
-                    value = value.map(ring => ring.trim())
-
-                    const isValidNumber = (ring) => !isNaN(ring) && ring != '';
-
-                    if (!value.every(isValidNumber)) {
-                        console.log("Checking: ", value);
-                        alert("Enter only numbers separated by dash or comma!");
-                        return false;
-                    }
+                    // trim empty space around array values
+                    value = value.map(value => value.trim());
+                    // remove empty values
+                    value = value.filter(gear => value !== "");
 
                     return value;
                 }
 
-                frontChainrings = cleanRings(frontChainrings);
-                rearChainrings = cleanRings(rearChainrings);
+                // function cleanRings(chainring) {
+                //     let value = chainring.value;
 
-                if (frontChainrings && rearChainrings) {
+                //     if (value.includes('-')) {
+                //         value = value.replace('-', ',');
+                //     }
+
+                //     value = value.split(',');
+
+                //     value = value.map(ring => ring.trim())
+
+                //     const isValidNumber = (ring) => !isNaN(ring) && ring != '';
+
+                //     if (!value.every(isValidNumber)) {
+                //         console.log("Checking: ", value);
+                //         alert("Enter only numbers separated by dash or comma!");
+                //         return false;
+                //     }
+
+                //     return value;
+                // }
+
+
+
+                // frontChainrings = cleanRings(frontChainrings);
+                // rearChainrings = cleanRings(rearChainrings);
+
+                // validate 
+
+                if (validateGearsetInput(frontChainrings) && validateGearsetInput(rearChainrings)) {
                     let newKey = undefined;
                     (Object.keys(customGearDB).length > 0) ? newKey = Math.max(...Object.keys(customGearDB).map(Number)) + 1 : newKey = 1;
-                    customGearDB[newKey] = {front: frontChainrings, rear: rearChainrings};
+                    customGearDB[newKey] = {front: inputToArray(frontChainrings), rear: inputToArray(rearChainrings)};
                 }
 
                 const makeCustomGearList = function (customGearDB) {
@@ -233,12 +281,6 @@ const buttonActions = {
                 }
 
                 makeCustomGearList(customGearDB);
-
-
-
-
-                console.log(frontChainrings, "#", rearChainrings)
-
                 
             })
             
@@ -321,6 +363,9 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
-
+document.querySelector('.icon').addEventListener('click', function() {
+    var dropdownMenu = document.getElementById('dropdown-menu');
+    dropdownMenu.classList.toggle('active');
+});
 
 

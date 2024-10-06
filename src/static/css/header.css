@@ -14,9 +14,15 @@ header {
     gap: 3%;
 }
 
-.header-buttons> button:nth-child(3) {
+/* .header-buttons> button:nth-child(3) {
      margin-left: 10%;
 
+} */
+
+.dropdown-menu {
+    margin-left: 10%;
+    display: flex;
+    gap: 3%;
 }
 
 
@@ -44,4 +50,30 @@ header {
     color: var(--color-darkest);
     border: 1px solid var(--color-darker);
     cursor: pointer;
+}
+
+.icon {
+    display: none;
+}
+
+@media screen and (max-width: 700px){
+    .icon {
+        display: block;
+        float: right;
+        color: var(--color-darkest);
+        align-self: center;
+        font-size: 1.8rem;
+        margin-left: 10%;
+    }
+
+    .dropdown-menu
+    {
+        display: none;
+    }
+   
+
+    .dropdown-menu.active {
+        display: flex;
+        margin-top: 1%;
+    }
 }
