@@ -1,13 +1,14 @@
 .container_model {
   display: grid;
   grid-template-areas:
-    "heading          heading          heading          heading          empty   "
-    "brand            series           ratio            buttonreset      selected"
-    "dropdowncassette dropdowncassette dropdowncrankset dropdowncrankset selected"
-    "teethscassette   teethscass1ette  teethscrankset   teethscrankset   selected"
-    "gt               grt              zz               buttonaddtograph asdad   ";
-  grid-template-rows: 3rem 3rem 3rem 2rem 2rem;
-  justify-items: center;
+    "heading          heading          heading          heading          ."
+    "brand            series           ratio            buttonreset      ."
+    "dropdowncassette dropdowncassette dropdowncrankset dropdowncrankset ."
+    "teethscassette   teethscass1ette  teethscrankset   teethscrankset   ."
+    ".                .                .                buttonaddtograph ."
+    "table            table            table            table            .";
+  grid-template-rows: auto auto auto auto auto 1fr;
+  /* justify-items: center; */
   align-items: center;
 }
 
@@ -37,4 +38,35 @@
 
 .model-filter-addtograph {
   grid-area: buttonaddtograph;
+}
+
+.model-filter-addtograph,
+.model-filter-reset {
+  border: 1px solid var(--color-darker);
+  border-radius: 1rem;
+  padding-left: 3%;
+  padding-right: 3%;
+  color: var(--color-darkest);
+  background: var(--color-middle);
+}
+
+.model-filter-addtograph:hover,
+.model-filter-reset:hover {
+  border: 1px solid var(--color-light);
+  background: var(--color-darker);
+  color: var(--color-light);
+  cursor: pointer;
+}
+
+.model-filter-reset {
+  width: 80%;
+  height: 80%;
+  justify-self: center;
+  background-color: hsla(5, 28%, 65%, 1);
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
 }
