@@ -1,39 +1,40 @@
 .container_model {
-    display: grid;
-    grid-template-areas: "heading          heading          heading          heading          empty   "
-                         "brand            series           ratio            buttonreset      selected"
-                         "dropdowncassette dropdowncassette dropdowncrankset dropdowncrankset selected"
-                         "teethscassette   teethscass1ette  teethscrankset   teethscrankset   selected"
-                         "gt               grt              zz               buttonaddtograph asdad   ";
-    grid-template-rows: 3rem 3rem 3rem 2rem 2rem;
-    justify-items: center;
-    align-items: center;
+  display: grid;
+  grid-template-areas:
+    "heading          heading          heading          heading          empty   "
+    "brand            series           ratio            buttonreset      selected"
+    "dropdowncassette dropdowncassette dropdowncrankset dropdowncrankset selected"
+    "teethscassette   teethscass1ette  teethscrankset   teethscrankset   selected"
+    "gt               grt              zz               buttonaddtograph asdad   ";
+  grid-template-rows: 3rem 3rem 3rem 2rem 2rem;
+  justify-items: center;
+  align-items: center;
 }
 
 .model-filter.dropdown.brand {
-    grid-area: brand;
+  grid-area: brand;
 }
 
 .model-filter.dropdown.series {
-    grid-area: series;
+  grid-area: series;
 }
 
 .model-filter.dropdown.ratio {
-    grid-area: ratio;
+  grid-area: ratio;
 }
 
 .model-filter-reset {
-    grid-area: buttonreset;
+  grid-area: buttonreset;
 }
 
 .all-cassettes {
-    grid-area: dropdowncassette;
+  grid-area: dropdowncassette;
 }
 
 .all-cranksets {
-    grid-area: dropdowncrankset;
+  grid-area: dropdowncrankset;
 }
 
 .model-filter-addtograph {
-    grid-area: buttonaddtograph;
+  grid-area: buttonaddtograph;
 }

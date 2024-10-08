@@ -1,13 +1,12 @@
 footer {
-    grid-area: footer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20%;
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20%;
 }
 
-
 footer {
-    background: var(--color-middle);
-    padding: 1% 10% 1% 10%;
+  background: var(--color-middle);
+  padding: 1% 10% 1% 10%;
 }

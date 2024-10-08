@@ -1,66 +1,67 @@
 .add-custom-gearset-btn {
-    border: 1px solid var(--color-darker);
-    border-radius: 1rem;
-    padding-left: 3%;
-    padding-right: 3%;
-    color: var(--color-darkest);
-    background: var(--color-middle);
+  border: 1px solid var(--color-darker);
+  border-radius: 1rem;
+  padding-left: 3%;
+  padding-right: 3%;
+  color: var(--color-darkest);
+  background: var(--color-middle);
 }
 
 .add-custom-gearset-btn:hover {
-    border: 1px solid var(--color-light);
-    background: var(--color-darker);
-    color: var(--color-light);
-    cursor: pointer;
+  border: 1px solid var(--color-light);
+  background: var(--color-darker);
+  color: var(--color-light);
+  cursor: pointer;
 }
 
 .container_custom {
-    display: grid;
-    grid-template-areas: "heading heading heading heading button "
-                         "table   table   table   table   table  "
-                         "graphs  graphs  graphs  graphs  graphs ";
-    grid-auto-rows: auto auto 1fr;
-    gap: 1%;
+  display: grid;
+  grid-template-areas:
+    "heading heading heading heading button "
+    "table   table   table   table   table  "
+    "graphs  graphs  graphs  graphs  graphs ";
+  grid-auto-rows: auto auto 1fr;
+  gap: 1%;
 }
 
 .add-custom-gearset-btn {
-    grid-area: button;
+  grid-area: button;
 }
+
 /* gear list as a whole - grid */
 #custom-gear-list {
-    grid-area: table;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1%;
-    --width-no: 5vw;
-    --width-front: 10vw;
-    --width-back: 20vw;
-    
-    
+  grid-area: table;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1%;
+  --width-no: 5vw;
+  --width-front: 10vw;
+  --width-back: 20vw;
 }
+
 /* individual row - also grid */
 #custom-gear-list > div {
-    padding: 1%;
-    display: grid;
-    grid-template-columns: 3vw 5vw 20vw 30vw;
-    gap: 3%;
-    overflow: scroll;
-    border: 1px solid var(--color-darker);
-    border-radius: 1rem;
-    align-items: center;
+  padding: 1%;
+  display: grid;
+  grid-template-columns: 3vw 5vw 20vw 30vw;
+  gap: 3%;
+  overflow: visible;
+  border: 1px solid var(--color-darker);
+  border-radius: 1rem;
+  align-items: center;
 }
 
 button.delete-button {
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: none;
-    color: red;    
-    cursor: pointer;
-    align-self: center;
-    justify-self: center;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  color: red;
+  cursor: pointer;
+  align-self: center;
+  justify-self: center;
 }
 
 .front-gear {
-    justify-self: flex-end;
+  justify-self: flex-end;
 }

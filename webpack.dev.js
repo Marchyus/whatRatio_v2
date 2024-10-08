@@ -1,17 +1,14 @@
-const { merge } = require('webpack-merge');
-const common = require('./webpack.common.js');
+const { merge } = require("webpack-merge");
+const common = require("./webpack.common.js");
 
-
-
-const { watchFile } = require('fs');
+const { watchFile } = require("fs");
 
 // config
 module.exports = merge(common, {
-    mode: "development",
+  mode: "development",
 
-    devtool: "source-map",
-    devServer: {
-        watchFiles: ["./src/**/*"],
-    },
-})
-
+  devtool: "source-map",
+  devServer: {
+    watchFiles: ["./src/**/*"],
+  },
+});
