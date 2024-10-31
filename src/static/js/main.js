@@ -5,6 +5,7 @@ import "../css/footer.css";
 import "../css/dialog.css";
 import "../css/tabModel.css";
 import "../css/tabCustom.css";
+import gearDatabase from "../data/gears.json";
 
 import { Button, Heading, Select } from "./designElements.js";
 
@@ -35,26 +36,79 @@ const buttonActions = {
       // apply css
       container.className = "";
       container.classList.add(this.cssClassList);
-
       // close down burger menu:
       const hanburgerMenu = document.querySelector("#dropdown-menu");
       hanburgerMenu.classList.remove("active");
+      
+      // Get brands, fill dropdown, overcomplicate it
+      function populateBrands () {
+        let readGearData = new Promise(function(resolve, reject) {
+          let brand_keys = Object.keys(gearDatabase);
+          let brand_set = brand_keys.map((brand) => {return {value: brand, text: gearDatabase[brand]["name"]}})
+          resolve(brand_set);
+        })
+        readGearData.then((brand_set) => {
+          const brandDropdown = new Select("brand", "brand", "brand");
+          container.appendChild(brandDropdown.getSelect());
 
-      // draw brand select
-      const brandDropdown = new Select("brand", "brand", "brand");
-      container.appendChild(brandDropdown.getSelect());
-      brandDropdown.addOption("shimano", "Shimano");
-      brandDropdown.addOption("sram", "Sram");
-      brandDropdown.addOption("campagnolo", "Campagnolo");
-      brandDropdown.div.classList.add("model-filter", "dropdown", "brand");
+          brandDropdown.addOption("all", "-");
+          brand_set.forEach(set => {
+            brandDropdown.addOption(set.value, set.text);
+          })
+          brandDropdown.div.classList.add("model-filter", "dropdown", "brand");
+        })
+      }
 
-      // draw series select
-      const seriesDropdown = new Select("series", "series", "series");
-      container.appendChild(seriesDropdown.getSelect());
-      seriesDropdown.addOption("grx", "GRX");
-      seriesDropdown.addOption("eagle", "Eagle");
-      seriesDropdown.addOption("ultegra", "Ultegra");
-      seriesDropdown.div.classList.add("model-filter", "dropdown", "series");
+      populateBrands();
+      
+      // Get series, fill dropdown, bit downcomplicate with map, bit overcomplicate with optGroup
+      function populateSeries () {
+        let readGearData = new Promise(function(resolve, reject) {
+          let seriesSet = Object.keys(gearDatabase).map((brandkey) => {
+            const brand = gearDatabase[brandkey];
+            const seriesName = Object.keys(brand.series).map((seriesKey) => brand.series[seriesKey].name);
+            return {
+              brand: brand,
+              series: seriesName
+            }
+          });
+          console.log(seriesSet);
+          resolve(seriesSet);
+          
+        })
+        readGearData.then((seriesSet) => {
+          const seriesDropdown = new Select("series", "series", "series");
+          
+          container.appendChild(seriesDropdown.getSelect());
+
+          const seriesDropdownSelect = document.querySelector('#series')
+
+          seriesDropdown.addOption("all", "-");
+          
+          
+          seriesSet.forEach(set => {
+            const optGroup = document.createElement('optgroup');
+            optGroup.label = set.brand.name
+            set.series.forEach((series) => {
+              const option = document.createElement('option');
+              option.value = series.toLowerCase();
+              option.label = series;
+
+              optGroup.appendChild(option);
+            })
+
+          seriesDropdownSelect.appendChild(optGroup);
+
+
+            
+          })
+          seriesDropdown.div.classList.add("model-filter", "dropdown", "series");
+        })
+      }
+
+      populateSeries();
+      
+      
 
       // draw ratio select
       const gearRatio = new Select("ratio", "ratio", "ratio");
@@ -75,7 +129,7 @@ const buttonActions = {
 
       // dropdown with cassette list
       const allCassettes = new Select(
-        "cassettes",
+        "cassette:",
         "all-cassettes",
         "all-cassettes",
       );
@@ -91,7 +145,7 @@ const buttonActions = {
 
       // dropdown with crankset list
       const allCranksets = new Select(
-        "cranksets",
+        "crankset:",
         "all-cranksets",
         "all-cranksets",
       );
@@ -280,10 +334,10 @@ const buttonActions = {
     heading: "Cranksets in database",
     init: function () {},
   },
-  header_button_faq: {
-    heading: "FAQ",
-    init: function () {},
-  },
+  // header_button_faq: {
+  //   heading: "FAQ",
+  //   init: function () {},
+  // },
   header_button_about: {
     heading: "About",
     init: function () {},

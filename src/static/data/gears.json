@@ -1,0 +1,1203 @@
+{
+  "campagnolo": {
+      "name": "Campagnolo",
+      "series": {}
+  },
+  "microshift": {
+      "name": "microSHIFT",
+      "series": {
+          "advent x g-series": {
+              "name": "ADVENT X G-Series",
+              "components": {
+                  "cassettes": {
+                      "cs-g104": {
+                          "name": "CS-G104",
+                          "sprockets": 10,
+                          "variants": [
+                              [
+                                  11,
+                                  13,
+                                  15,
+                                  18,
+                                  21,
+                                  24,
+                                  28,
+                                  34,
+                                  40,
+                                  48
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {}
+              }
+          },
+          "advent x h-series": {
+              "name": "ADVENT X H-Series",
+              "components": {
+                  "cassettes": {
+                      "cs-h104": {
+                          "name": "CS-H104",
+                          "sprockets": 10,
+                          "variants": [
+                              [
+                                  11,
+                                  13,
+                                  15,
+                                  18,
+                                  21,
+                                  24,
+                                  28,
+                                  34,
+                                  40,
+                                  48
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {}
+              }
+          },
+          "sword": {
+              "name": "Sword",
+              "components": {
+                  "cassettes": {
+                      "cs-g105": {
+                          "name": "CS-G105",
+                          "sprockets": 10,
+                          "variants": [
+                              [
+                                  11,
+                                  13,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  24,
+                                  28,
+                                  32,
+                                  38
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {
+                      "fc-g7000-48": {
+                          "name": "FC-G7000-48",
+                          "sprockets": 2,
+                          "variants": [
+                              [
+                                  31,
+                                  48
+                              ]
+                          ]
+                      }
+                  }
+              }
+          },
+          "acolyte": {
+              "name": "Acolyte",
+              "components": {
+                  "cassettes": {
+                      "cs-h083": {
+                          "name": "CS-H083",
+                          "sprockets": 8,
+                          "variants": [
+                              [
+                                  12,
+                                  15,
+                                  18,
+                                  21,
+                                  24,
+                                  30,
+                                  37,
+                                  46
+                              ],
+                              [
+                                  11,
+                                  13,
+                                  15,
+                                  18,
+                                  22,
+                                  28,
+                                  34,
+                                  42
+                              ],
+                              [
+                                  12,
+                                  15,
+                                  18,
+                                  21,
+                                  24,
+                                  28,
+                                  34,
+                                  42
+                              ],
+                              [
+                                  11,
+                                  13,
+                                  15,
+                                  18,
+                                  21,
+                                  24,
+                                  30,
+                                  38
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {}
+              }
+          },
+          "advent h-series": {
+              "name": "ADVENT H-Series",
+              "components": {
+                  "cassettes": {
+                      "cs-h093": {
+                          "name": "CS-H093",
+                          "sprockets": 9,
+                          "variants": [
+                              [
+                                  11,
+                                  13,
+                                  15,
+                                  18,
+                                  21,
+                                  24,
+                                  28,
+                                  34,
+                                  42
+                              ],
+                              [
+                                  11,
+                                  13,
+                                  15,
+                                  18,
+                                  21,
+                                  24,
+                                  28,
+                                  32,
+                                  38
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {}
+              }
+          },
+          "advent e-series": {
+              "name": "ADVENT E-Series",
+              "components": {
+                  "cassettes": {
+                      "cs-eh093": {
+                          "name": "CS-EH093",
+                          "sprockets": 9,
+                          "variants": [
+                              [
+                                  11,
+                                  13,
+                                  15,
+                                  18,
+                                  21,
+                                  24,
+                                  28,
+                                  34,
+                                  42
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {}
+              }
+          },
+          "xle": {
+              "name": "XLE",
+              "components": {
+                  "cassettes": {
+                      "cs-h103a": {
+                          "name": "CS-H103A",
+                          "sprockets": 10,
+                          "variants": [
+                              [
+                                  11,
+                                  13,
+                                  15,
+                                  18,
+                                  21,
+                                  24,
+                                  28,
+                                  32,
+                                  36,
+                                  42
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {}
+              }
+          },
+          "r10": {
+              "name": "R10",
+              "components": {
+                  "cassettes": {
+                      "cs-h100": {
+                          "name": "CS-H100",
+                          "sprockets": 10,
+                          "variants": [
+                              [
+                                  11,
+                                  12,
+                                  13,
+                                  14,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  23,
+                                  25
+                              ],
+                              [
+                                  11,
+                                  12,
+                                  13,
+                                  14,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  24,
+                                  28
+                              ],
+                              [
+                                  11,
+                                  12,
+                                  13,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  24,
+                                  28,
+                                  32
+                              ],
+                              [
+                                  11,
+                                  12,
+                                  13,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  24,
+                                  28,
+                                  34
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {}
+              }
+          },
+          "centos": {
+              "name": "Centos",
+              "components": {
+                  "cassettes": {
+                      "cs-g100": {
+                          "name": "CS-G100",
+                          "sprockets": 10,
+                          "variants": [
+                              [
+                                  11,
+                                  12,
+                                  13,
+                                  14,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  23,
+                                  25
+                              ],
+                              [
+                                  11,
+                                  12,
+                                  13,
+                                  14,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  24,
+                                  28
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {}
+              }
+          },
+          "mezoo": {
+              "name": "Mezoo",
+              "components": {
+                  "cassettes": {
+                      "cs-h072": {
+                          "name": "CS-H072",
+                          "sprockets": 7,
+                          "variants": [
+                              [
+                                  12,
+                                  13,
+                                  15,
+                                  18,
+                                  21,
+                                  24,
+                                  28
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {}
+              }
+          }
+      }
+  },
+  "shimano": {
+      "name": "Shimano",
+      "series": {
+          "claris": {
+              "name": "Claris",
+              "components": {
+                  "cassettes": {
+                      "cs-hg50-8": {
+                          "name": "CS-HG50-8",
+                          "sprockets": 8,
+                          "variants": [
+                              [
+                                  11,
+                                  13,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  24,
+                                  28
+                              ],
+                              [
+                                  11,
+                                  13,
+                                  15,
+                                  17,
+                                  20,
+                                  23,
+                                  26,
+                                  30
+                              ],
+                              [
+                                  11,
+                                  13,
+                                  15,
+                                  18,
+                                  21,
+                                  24,
+                                  28,
+                                  32
+                              ],
+                              [
+                                  11,
+                                  13,
+                                  15,
+                                  18,
+                                  21,
+                                  24,
+                                  28,
+                                  34
+                              ],
+                              [
+                                  12,
+                                  13,
+                                  14,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  23
+                              ],
+                              [
+                                  12,
+                                  13,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  23,
+                                  25
+                              ],
+                              [
+                                  13,
+                                  14,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  23,
+                                  26
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {
+                      "fc-r2030": {
+                          "name": "FC-R2030",
+                          "sprockets": 3,
+                          "variants": [
+                              [
+                                  50,
+                                  39,
+                                  30
+                              ]
+                          ]
+                      }
+                  }
+              }
+          },
+          "ultegra": {
+              "name": "Ultegra",
+              "components": {
+                  "cassettes": {
+                      "cs-r8101-12": {
+                          "name": "CS-R8101-12",
+                          "sprockets": 12,
+                          "variants": [
+                              [
+                                  11,
+                                  12,
+                                  13,
+                                  14,
+                                  15,
+                                  16,
+                                  17,
+                                  19,
+                                  21,
+                                  24,
+                                  27,
+                                  30
+                              ],
+                              [
+                                  11,
+                                  12,
+                                  13,
+                                  14,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  24,
+                                  27,
+                                  30,
+                                  34
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {
+                      "fc-r8100": {
+                          "name": "FC-R8100",
+                          "sprockets": 2,
+                          "variants": [
+                              [
+                                  36,
+                                  46
+                              ],
+                              [
+                                  34,
+                                  50
+                              ],
+                              [
+                                  36,
+                                  52
+                              ]
+                          ]
+                      }
+                  }
+              }
+          },
+          "105": {
+              "name": "105",
+              "components": {
+                  "cassettes": {
+                      "cs-r7101-12": {
+                          "name": "CS-R7101-12",
+                          "sprockets": 12,
+                          "variants": [
+                              [
+                                  11,
+                                  12,
+                                  13,
+                                  14,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  24,
+                                  27,
+                                  30,
+                                  34
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {
+                      "fc-rs520": {
+                          "name": "FC-RS520",
+                          "sprockets": 2,
+                          "variants": [
+                              [
+                                  34,
+                                  50
+                              ]
+                          ]
+                      }
+                  }
+              }
+          },
+          "xt": {
+              "name": "XT",
+              "components": {
+                  "cassettes": {
+                      "cs-m8100-12": {
+                          "name": "CS-M8100-12",
+                          "sprockets": 12,
+                          "variants": [
+                              [
+                                  10,
+                                  12,
+                                  14,
+                                  16,
+                                  18,
+                                  21,
+                                  24,
+                                  28,
+                                  32,
+                                  36,
+                                  40,
+                                  45
+                              ],
+                              [
+                                  10,
+                                  12,
+                                  14,
+                                  16,
+                                  18,
+                                  21,
+                                  24,
+                                  28,
+                                  33,
+                                  39,
+                                  45,
+                                  51
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {}
+              }
+          },
+          "slx": {
+              "name": "SLX",
+              "components": {
+                  "cassettes": {
+                      "cs-m7100-12": {
+                          "name": "CS-M7100-12",
+                          "sprockets": 12,
+                          "variants": [
+                              [
+                                  10,
+                                  12,
+                                  14,
+                                  16,
+                                  18,
+                                  21,
+                                  24,
+                                  28,
+                                  32,
+                                  36,
+                                  40,
+                                  45
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {}
+              }
+          },
+          "deore": {
+              "name": "Deore",
+              "components": {
+                  "cassettes": {
+                      "cs-hg50-10": {
+                          "name": "CS-HG50-10",
+                          "sprockets": 10,
+                          "variants": [
+                              [
+                                  11,
+                                  13,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  24,
+                                  28,
+                                  32,
+                                  36
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {}
+              }
+          },
+          "grx": {
+              "name": "GRX",
+              "components": {
+                  "cassettes": {
+                      "cs-hg500-10": {
+                          "name": "CS-HG500-10",
+                          "sprockets": 10,
+                          "variants": [
+                              [
+                                  11,
+                                  12,
+                                  13,
+                                  14,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  23,
+                                  25
+                              ],
+                              [
+                                  28,
+                                  25,
+                                  23,
+                                  21,
+                                  19,
+                                  17,
+                                  15,
+                                  14,
+                                  13,
+                                  12
+                              ],
+                              [
+                                  11,
+                                  12,
+                                  14,
+                                  16,
+                                  18,
+                                  20,
+                                  22,
+                                  25,
+                                  28,
+                                  32
+                              ],
+                              [
+                                  11,
+                                  13,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  23,
+                                  26,
+                                  30,
+                                  34
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {
+                      "fc-rx820-2": {
+                          "name": "FC-RX820-2",
+                          "sprockets": 2,
+                          "variants": [
+                              [
+                                  31,
+                                  48
+                              ]
+                          ]
+                      }
+                  }
+              }
+          },
+          "sora": {
+              "name": "Sora",
+              "components": {
+                  "cassettes": {
+                      "cs-hg50-9": {
+                          "name": "CS-HG50-9",
+                          "sprockets": 9,
+                          "variants": [
+                              [
+                                  11,
+                                  12,
+                                  14,
+                                  16,
+                                  18,
+                                  20,
+                                  23,
+                                  26,
+                                  30
+                              ],
+                              [
+                                  12,
+                                  13,
+                                  14,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  23,
+                                  25
+                              ],
+                              [
+                                  13,
+                                  14,
+                                  15,
+                                  16,
+                                  17,
+                                  19,
+                                  21,
+                                  23,
+                                  25
+                              ],
+                              [
+                                  14,
+                                  15,
+                                  16,
+                                  17,
+                                  18,
+                                  19,
+                                  21,
+                                  23,
+                                  25
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {
+                      "fc-r3030": {
+                          "name": "FC-R3030",
+                          "sprockets": 3,
+                          "variants": [
+                              [
+                                  50,
+                                  39,
+                                  30
+                              ]
+                          ]
+                      }
+                  }
+              }
+          },
+          "tiagra": {
+              "name": "Tiagra",
+              "components": {
+                  "cassettes": {},
+                  "cranksets": {
+                      "fc-4700": {
+                          "name": "FC-4700",
+                          "sprockets": 2,
+                          "variants": [
+                              [
+                                  48,
+                                  34
+                              ],
+                              [
+                                  50,
+                                  34
+                              ],
+                              [
+                                  52,
+                                  36
+                              ]
+                          ]
+                      }
+                  }
+              }
+          },
+          "dura-ace": {
+              "name": "Dura-Ace",
+              "components": {
+                  "cassettes": {
+                      "cs-r9200-12": {
+                          "name": "CS-R9200-12",
+                          "sprockets": 12,
+                          "variants": [
+                              [
+                                  11,
+                                  12,
+                                  13,
+                                  14,
+                                  15,
+                                  16,
+                                  17,
+                                  19,
+                                  21,
+                                  24,
+                                  27,
+                                  30
+                              ],
+                              [
+                                  11,
+                                  12,
+                                  13,
+                                  14,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  24,
+                                  27,
+                                  30,
+                                  34
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {
+                      "fc-r9200": {
+                          "name": "FC-R9200",
+                          "sprockets": 2,
+                          "variants": [
+                              [
+                                  36,
+                                  46
+                              ],
+                              [
+                                  34,
+                                  50
+                              ],
+                              [
+                                  36,
+                                  52
+                              ],
+                              [
+                                  40,
+                                  54
+                              ]
+                          ]
+                      }
+                  }
+              }
+          },
+          "xtr": {
+              "name": "XTR",
+              "components": {
+                  "cassettes": {
+                      "cs-m9100-12": {
+                          "name": "CS-M9100-12",
+                          "sprockets": 12,
+                          "variants": [
+                              [
+                                  10,
+                                  12,
+                                  14,
+                                  16,
+                                  18,
+                                  21,
+                                  24,
+                                  28,
+                                  32,
+                                  36,
+                                  40,
+                                  45
+                              ],
+                              [
+                                  10,
+                                  12,
+                                  14,
+                                  16,
+                                  18,
+                                  21,
+                                  24,
+                                  28,
+                                  33,
+                                  39,
+                                  45,
+                                  51
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {
+                      "fc-m9130-1": {
+                          "name": "FC-M9130-1",
+                          "sprockets": 1,
+                          "variants": [
+                              [
+                                  30
+                              ],
+                              [
+                                  32
+                              ],
+                              [
+                                  34
+                              ]
+                          ]
+                      }
+                  }
+              }
+          },
+          "deore xt": {
+              "name": "Deore XT",
+              "components": {
+                  "cassettes": {
+                      "cs-lg600-11": {
+                          "name": "CS-LG600-11",
+                          "sprockets": 11,
+                          "variants": [
+                              [
+                                  11,
+                                  13,
+                                  15,
+                                  17,
+                                  20,
+                                  23,
+                                  26,
+                                  30,
+                                  36,
+                                  43,
+                                  50
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {
+                      "fc-m8100-2": {
+                          "name": "FC-M8100-2",
+                          "sprockets": 2,
+                          "variants": [
+                              [
+                                  26,
+                                  36
+                              ]
+                          ]
+                      }
+                  }
+              }
+          }
+      }
+  },
+  "sram": {
+      "name": "SRAM",
+      "series": {
+          "apex": {
+              "name": "Apex",
+              "components": {
+                  "cassettes": {
+                      "cs-pg-1231-d1": {
+                          "name": "CS-PG-1231-D1",
+                          "sprockets": 12,
+                          "variants": [
+                              [
+                                  11,
+                                  12,
+                                  13,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  24,
+                                  28,
+                                  32,
+                                  38,
+                                  44
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {
+                      "fc-apx-1w-d1": {
+                          "name": "FC-APX-1W-D1",
+                          "sprockets": 1,
+                          "variants": [
+                              [
+                                  40
+                              ],
+                              [
+                                  42
+                              ]
+                          ]
+                      }
+                  }
+              }
+          },
+          "rival": {
+              "name": "Rival",
+              "components": {
+                  "cassettes": {
+                      "cs-xg-1250-d1": {
+                          "name": "CS-XG-1250-D1",
+                          "sprockets": 12,
+                          "variants": [
+                              [
+                                  10,
+                                  11,
+                                  12,
+                                  13,
+                                  14,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  24,
+                                  27,
+                                  30
+                              ],
+                              [
+                                  10,
+                                  11,
+                                  12,
+                                  13,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  24,
+                                  28,
+                                  32,
+                                  36
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {
+                      "fc-riv-1w-d1": {
+                          "name": "FC-RIV-1W-D1",
+                          "sprockets": 1,
+                          "variants": [
+                              [
+                                  40
+                              ],
+                              [
+                                  46
+                              ]
+                          ]
+                      }
+                  }
+              }
+          },
+          "force": {
+              "name": "Force",
+              "components": {
+                  "cassettes": {
+                      "cs-xg-1270-d1": {
+                          "name": "CS-XG-1270-D1",
+                          "sprockets": 12,
+                          "variants": [
+                              [
+                                  10,
+                                  11,
+                                  12,
+                                  13,
+                                  14,
+                                  15,
+                                  16,
+                                  17,
+                                  19,
+                                  21,
+                                  24,
+                                  28
+                              ],
+                              [
+                                  10,
+                                  11,
+                                  12,
+                                  13,
+                                  14,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  24,
+                                  27,
+                                  30
+                              ],
+                              [
+                                  10,
+                                  11,
+                                  12,
+                                  13,
+                                  14,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  24,
+                                  28,
+                                  33
+                              ],
+                              [
+                                  10,
+                                  11,
+                                  12,
+                                  13,
+                                  15,
+                                  17,
+                                  19,
+                                  21,
+                                  24,
+                                  28,
+                                  32,
+                                  36
+                              ]
+                          ]
+                      }
+                  },
+                  "cranksets": {
+                      "fc-frc-wp-d2": {
+                          "name": "FC-FRC-WP-D2",
+                          "sprockets": 2,
+                          "variants": [
+                              [
+                                  30,
+                                  43
+                              ]
+                          ]
+                      }
+                  }
+              }
+          },
+          "red": {
+              "name": "RED",
+              "components": {
+                  "cassettes": {},
+                  "cranksets": {
+                      "fc-red-d1": {
+                          "name": "FC-RED-D1",
+                          "sprockets": 2,
+                          "variants": [
+                              [
+                                  33,
+                                  46
+                              ],
+                              [
+                                  35,
+                                  48
+                              ],
+                              [
+                                  37,
+                                  50
+                              ]
+                          ]
+                      }
+                  }
+              }
+          }
+      }
+  },
+  "sunrace": {
+      "name": "SunRace",
+      "series": {}
+  }
+}

@@ -48,6 +48,7 @@
   padding-right: 3%;
   color: var(--color-darkest);
   background: var(--color-middle);
+  transition: background-color 0.3s;
 }
 
 .model-filter-addtograph:hover,

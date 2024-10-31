@@ -26,7 +26,7 @@ const buttonCranksets = new Button(
   "header_button_cranksets",
   "header-button",
 );
-const buttonFAQ = new Button("FAQ", "header_button_faq", "header-button");
+// const buttonFAQ = new Button("FAQ", "header_button_faq", "header-button");
 const buttonAbout = new Button("About", "header_button_about", "header-button");
 
 // div to hold dynamic part of header
@@ -35,7 +35,7 @@ dynamicHeader.classList = "dropdown-menu";
 dynamicHeader.id = "dropdown-menu";
 dynamicHeader.appendChild(buttonCassettes.buildButton());
 dynamicHeader.appendChild(buttonCranksets.buildButton());
-dynamicHeader.appendChild(buttonFAQ.buildButton());
+// dynamicHeader.appendChild(buttonFAQ.buildButton());
 dynamicHeader.appendChild(buttonAbout.buildButton());
 
 // add buttons into NAV:

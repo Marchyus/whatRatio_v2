@@ -62,9 +62,9 @@ class Heading {
 }
 
 class Select {
-  constructor(labelText, name, id) {
+  constructor(labelText, selectName, id) {
     this.labelText = labelText;
-    this.name = name;
+    this.selectName = selectName;
     this.id = id;
     // Build up label element
     this.label = document.createElement("label");
@@ -75,7 +75,7 @@ class Select {
     // Build up select
     this.select = document.createElement("select");
     this.select.setAttribute("id", this.id);
-    this.select.setAttribute("name", this.name);
+    this.select.setAttribute("name", this.selectName);
   }
 
   // return DIV with label+select inside
